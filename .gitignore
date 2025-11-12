@@ -2,3 +2,5 @@ target/
 
 ### IntelliJ IDEA ###
 .idea
+.allure
+.mvn
