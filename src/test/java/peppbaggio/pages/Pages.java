@@ -1,6 +1,9 @@
 package peppbaggio.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import peppbaggio.elements.SearchField;
+import peppbaggio.elements.StaticImageElement;
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -13,16 +16,19 @@ public class Pages {
         open(url);
     }
 
-    //* Ищем: селектор для поля поиска дан в параметре (меняется в зависимости от страницы), задаем ему
-    // значение из параметра, жмем enter*/
     public void searchSomething(SelenideElement searchField, String value) {
-        searchField.setValue(value).pressEnter();
+        SearchField field = new SearchField();
+
+        field.checkVisible(searchField)
+                .checkClickable(searchField)
+                .clickField(searchField)
+                .setValue(searchField, value);
     }
 
-    // проверяем наличие логотипа поисковика. Селектор для логотипа зависит от поисковой системы и
-    // задается в параметрах метода. Лого дожно быть видимо
     public void checkLogoIsVisible(SelenideElement logo) {
-        logo.shouldBe(visible);
+        StaticImageElement element = new StaticImageElement();
+
+        element.checkVisible(logo);
     }
 
 }

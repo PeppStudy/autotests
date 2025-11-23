@@ -4,3 +4,4 @@ target/
 .idea
 .allure
 .mvn
+/src/test/java/peppbaggio/Ошибки
