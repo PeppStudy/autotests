@@ -17,18 +17,18 @@ public class Pages {
     }
 
     public void searchSomething(SelenideElement searchField, String value) {
-        SearchField field = new SearchField();
+        SearchField field = new SearchField(searchField, value);
 
-        field.checkVisible(searchField)
-                .checkClickable(searchField)
-                .clickField(searchField)
-                .setValue(searchField, value);
+        field.checkVisible()
+                .checkClickable()
+                .clickField()
+                .setValue();
     }
 
     public void checkLogoIsVisible(SelenideElement logo) {
-        StaticImageElement element = new StaticImageElement();
+        StaticImageElement element = new StaticImageElement(logo);
 
-        element.checkVisible(logo);
+        element.checkV
     }
 
 }
